@@ -1,6 +1,8 @@
 //import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import CardList from './component/card-list/card-list';
+import SearchBox from './component/search-box/search-box';
 //import { useState } from 'react';
 
 
@@ -57,18 +59,17 @@ class App extends React.Component {
       ))
   }
 
-  onSearch = (event) => {
-            var searchField = event.target.value.toLocaleLowerCase();
-            //console.log(search)
-            
-              this.setState(
-                ()=>{
-                  return {searchField}
-              },
-                
-                )
-              
-          }
+onSearch = (event) => {
+          var searchField = event.target.value.toLocaleLowerCase();
+          //console.log(search)
+            this.setState(
+              ()=>{
+                return {searchField}
+                },
+            )
+        }
+
+
 
   render() {
 
@@ -85,10 +86,15 @@ class App extends React.Component {
 
     return ( 
       <div className = "App" >
-      <input type = "search" className = "search-box" placeholder = 'Search'
-        onChange = {onSearch}
-        />
-      ) {
+      
+      <SearchBox 
+            className = "search-box"
+            placeholder = "Search Monsters"
+            onChangeHandler={onSearch} 
+      />
+      
+      )
+       {/* {
         filtered.map((monster) => {
           return ( 
             <div key = {monster.id} >
@@ -96,7 +102,8 @@ class App extends React.Component {
             </div>   
           );
         })
-      } 
+      }  */}
+      <CardList  monsters = {filtered}/>
       </div>
     )
   }
