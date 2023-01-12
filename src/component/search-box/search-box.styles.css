@@ -1,0 +1,29 @@
+.search-box {
+  -webkit-appearance: none;
+  /* border: none; */
+  outline: none;
+  padding: 10px;
+  width: 300px;
+  line-height: 30px;
+  margin-bottom: 30px;
+  
+  box-shadow: 5px 5px 10px rgb(47, 0, 0);  
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 3px solid rgb(97, 0, 0);
+  background-color: rgb(251, 148, 63);
+  color: rgb(97, 0, 0);
+  font-size: larger;
+  font-weight: 600;
+}
+.search-box:focus{
+  border: 3px solid rgb(47, 0, 0);
+  background-color: rgb(255, 186,97);
+  color: rgb(59, 11, 11);
+  width: 310px;
+  box-shadow: 6px 6px 15px rgb(47, 0, 0);
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color:  rgb(147, 2, 2);
+  opacity: 1; /* Firefox */
+}
